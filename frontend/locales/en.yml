@@ -1,0 +1,541 @@
+en:
+  thesa:
+    subject: Subject
+    term: Term
+    general_note: Note
+    preferred: Preferred format?
+    _singular: Thesaurus
+    _plural: Thesaurus
+    _frontend:
+      action:
+        save: Save Thesaurus
+        create: Create
+      section:
+        basic_information: Basic Information
+      messages:
+        created: Thesaurus Term Created
+        updated: Thesaurus Updated
+        deleted: Thesaurus Term deleted.
+
+  thesa_term:
+    term: Term
+    preferred: Preferred format?
+    _singular: Term
+    _plural: Terms
+    _frontend:
+      action:
+        add: Add Term
+        create: Create
+      messages:
+        updated: Thesaurus Term updated.
+        deleted: Thesaurus Term deleted.
+
+  patron_reg:
+    primary_name: Primary Part of Name
+    primary_name_tooltip: |
+        <p>The primary part of a name form (e.g. a last name or surname of a person).</p>
+        <p>Examples:</p>
+        <ul>
+        <li>Churchill <em>(for Churchill, Winston, Sir, 1874-1965 [person])</em></i>
+        <li>Black Foot <em>(for Black Foot, Chief, d. 1877 [person])</em></li>
+        <li>International Business Machines <em>(for International Business Machines. Microelectronics Division [corporate entity])</em></li>
+        </ul>
+    prefix: Prefix
+    prefix_tooltip: |
+        <p>Any term associated with a name that in normative use would precede the entire name.</p>
+        <p>Examples:</p>
+        <ul>
+        <li>Mrs.</li>
+        </ul>
+    title: Title
+    title_tooltip: |
+        <p>A title that is part of the name.</p>
+        <p>Examples:</p>
+        <ul>
+        <li>Sir <em>(for Churchill, Winston, Sir, 1874-1965)</em></li>
+        <li>Chief (for Black Foot, Chief, d. 1877)</li>
+        <li>Emperor of the East <em>(for John II Comnenus. Emperor of the East.)</em></li>
+        </ul>
+    rest_of_name: Rest of Name
+    rest_of_name_tooltip: |
+        <p>The first name element or forename and additional names, e.g, middle names, for the person named in the record.</p>
+        <p>Examples:</p>
+        <ul>
+        <li>Winston <em>(for Churchill, Winston, Sir, 1874-1965)</em></li>
+        <li>Humphrey <em>(for Ward, Humphrey, Mrs., 1851-1920)</em></li>
+        </ul>
+    suffix: Suffix
+    suffix_tooltip: |
+        <p>A term following a name that qualifies the name but is not a title.</p>
+        <p>Examples</p>
+        <ul>
+        <li>Jr.</li>
+        <li>fils</li>
+        </ul>
+    fuller_form: Fuller Form
+    fuller_form_tooltip: |
+        <p>The fuller form of first and middle names, when abbreviated.</p>
+        <p>Examples</p>
+        <ul>
+        <li>Hilda Doolittle <em>(for H.D., Hilda Doolittle, 1886-1961)</em></li>
+        </ul>
+    number: Number
+    number_tooltip: |
+        <p>A number, sometimes with a term, that qualifies the name. For personal names, often a roman numeral or a roman numeral and a subsequent part of a forename. For corporate names, the number of a part / section or meeting.</p>
+        <p>Examples:</p>
+        <ul>
+        <li>II Comnenus <em>(for John II Comnenus, Emperor of the East</em>/li>
+        <li>II <em>(for John Paul II)</em></li>
+        <li>97th, 2nd session <em>(for United States Congress, 97th, 2nd session)</em></li>
+        </ul>
+    address: Addrress
+    city: City
+    state: State
+    zip: Zip
+    country: Country
+    int_ext: Internal / External
+    external_name: Association Name
+    emails: Email
+    general_note: Notes
+    _singular: Patron Registration
+    _plural: Patron Registrations
+    _frontend:
+      action:
+        save: Save Patron Registration
+        create: Create
+      section:
+        basic_information: Basic Information
+      messages:
+        created: Patron Registration Created
+        updated: Patron Registration Updated
+        deleted: Patron Registration Deleted.
+
+  patron_purpose:
+    status: Status
+    purpose: Purpose
+    status_note: Status Note
+    purpose_note: Purpose Note
+    research_topic: Research Topic
+    date_signed: Date Signed
+    _singular: Status
+    _plural: Status
+    _frontend:
+      action:
+        add: Add Status
+
+  patron_callslip:
+    date_signed: Date Signed
+    type_of_mat: Type of Material
+    signed_by: Signed By
+    signed_by_name: Signed By Name
+    coll_title: Collection or Title
+    coll_author: Author
+    coll_location: Call #/Location/Item #
+    box_nums: Box Numbers
+    pulled_by: Pulled By
+    general_note: Notes
+    _singular: Call Slip
+    _plural: Call Slips
+    _frontend:
+      action:
+        add: Add Call Slip
+
+  patron_stat:
+    form_of_contact: Form of Contact
+    type_of_patron: Type of Patron
+    int_ext: Internal / External
+    time_spent: Time Spent (mins)
+    from_where: Where From?
+    num_on_tour: Number on Tour or Briefing
+    patron_names: Patron Names
+    questions: Question Asked
+    answers_provided: Answer Summary / Resource Provided
+    general_note: Notes
+    staff_member: Staff Member
+    todays_date: Today's Date
+    _singular: Patron Statistic
+    _plural: Patron Statistics
+    _frontend:
+      action:
+        save: Save Patron Stat
+        create: Create
+      section:
+        basic_information: Basic Information
+      messages:
+        created: Patron Statistic Created
+        updated: Patron Statistic Updated
+        deleted: Patron Statistic Deleted.
+
+  operation:
+    title: Title
+    title_viet: Vietnamese Title
+    objective: Objective
+    description: Description
+    date_s: Start Date
+    date_e: End Date
+    ctz: Combat Tactical Zone
+    tao: Tactical Area of Operation
+    aos_str: Allied Operational Strength
+    aos_kia: Killed in Action
+    aos_mia: Missing in Action
+    aos_wia: Wounded in Action
+    aos_pow: Prisoners of War
+    eos_str: Enemy Operational Strength
+    eos_kia: Killed in Action
+    eos_mia: Missing in Action
+    eos_wia: Wounded in Action
+    eos_pow: Prisoners of War
+    _singular: Operation
+    _plural: Operations
+    _frontend:
+      action:
+        save: Save Operation
+        create: Create
+      section:
+        basic_information: Basic Information
+      messages:
+        created: Operation Created
+        updated: Operation Updated
+        deleted: Operation Deleted.
+
+  ops_aunit:
+    unit: Unit
+    branch: Branch
+    branch_abbr: Branch Abbrv.
+    _singular: Allied Unit Involved
+    _plural: Allied Units Involved
+    _frontend:
+      action:
+        add: Add Allied Unit
+
+  ops_eunit:
+    unit: Unit
+    branch: Branch
+    branch_abbr: Branch Abbrv.
+    _singular: Enemy Unit Involved
+    _plural: Enemy Units Involved
+    _frontend:
+      action:
+        add: Add Enemy Unit
+
+  ops_source:
+    author: Author
+    title: Title
+    _singular: Source
+    _plural: Sources
+    _frontend:
+      action:
+        add: Add Source
+
+  ttusea:
+    primary_name: Primary Part of Name
+    primary_name_tooltip: |
+        <p>The primary part of a name form (e.g. a last name or surname of a person).</p>
+        <p>Examples:</p>
+        <ul>
+        <li>Churchill <em>(for Churchill, Winston, Sir, 1874-1965 [person])</em></i>
+        <li>Black Foot <em>(for Black Foot, Chief, d. 1877 [person])</em></li>
+        <li>International Business Machines <em>(for International Business Machines. Microelectronics Division [corporate entity])</em></li>
+        </ul>
+    prefix: Prefix
+    prefix_tooltip: |
+        <p>Any term associated with a name that in normative use would precede the entire name.</p>
+        <p>Examples:</p>
+        <ul>
+        <li>Mrs.</li>
+        <li>Mr.</li>
+        <li>Colonel</li>
+        <li>General</li>
+        </ul>
+    title: Title
+    title_tooltip: |
+        <p>A title that is part of the name.</p>
+        <p>Examples:</p>
+        <ul>
+        <li>Sir <em>(for Churchill, Winston, Sir, 1874-1965)</em></li>
+        <li>Chief (for Black Foot, Chief, d. 1877)</li>
+        <li>Emperor of the East <em>(for John II Comnenus. Emperor of the East.)</em></li>
+        </ul>
+    rest_of_name: Rest of Name
+    rest_of_name_tooltip: |
+        <p>The first name element or forename and additional names, e.g, middle names, for the person named in the record.</p>
+        <p>Examples:</p>
+        <ul>
+        <li>Winston <em>(for Churchill, Winston, Sir, 1874-1965)</em></li>
+        <li>Humphrey <em>(for Ward, Humphrey, Mrs., 1851-1920)</em></li>
+        </ul>
+    suffix: Suffix
+    suffix_tooltip: |
+        <p>A term following a name that qualifies the name but is not a title.</p>
+        <p>Examples</p>
+        <ul>
+        <li>Jr.</li>
+        <li>fils</li>
+        </ul>
+    fuller_form: Fuller Form
+    fuller_form_tooltip: |
+        <p>The fuller form of first and middle names, when abbreviated.</p>
+        <p>Examples</p>
+        <ul>
+        <li>Hilda Doolittle <em>(for H.D., Hilda Doolittle, 1886-1961)</em></li>
+        </ul>
+    number: Number
+    number_tooltip: |
+        <p>A number, sometimes with a term, that qualifies the name. For personal names, often a roman numeral or a roman numeral and a subsequent part of a forename. For corporate names, the number of a part / section or meeting.</p>
+        <p>Examples:</p>
+        <ul>
+        <li>II Comnenus <em>(for John II Comnenus, Emperor of the East</em>/li>
+        <li>II <em>(for John Paul II)</em></li>
+        <li>97th, 2nd session <em>(for United States Congress, 97th, 2nd session)</em></li>
+        </ul>
+    dobirth: Date of Birth
+    dodeath: Date of Death
+    dograd: Graduation Date
+    text_block: Profile Text
+    profile_img: Profile Image
+    general_note: Notes
+    path: Document Paths
+    _singular: Techsan
+    _plural: Techsans
+    _frontend:
+      action:
+        save: Save Techsan
+        create: Create
+      section:
+        basic_information: Basic Information
+      messages:
+        created: Techsan Created
+        updated: Techsan Updated
+        deleted: Techsan Deleted.
+
+  ttusea_ttu:
+    date_s: Start Date
+    date_e: End Date
+    _singular: Date at TTU
+    _plural: Dates at TTU
+    _frontend:
+      action:
+        add: Add Time at TTU
+
+  ttusea_img:
+    image_link: Image Link
+    description: Description
+    _singular: Image
+    _plural: Images
+    _frontend:
+      action:
+        add: Add Image
+
+  ttusea_link:
+    link_link: Link
+    link_text: Link Display
+    type: Type of Link
+    type_tooltip: |
+        <p>Type (Document, Webpage, Video, Etc...)</p>
+        <p>Examples:</p>
+        <ul>
+        <li>Document/li>
+        <li>Webpage</li>
+        <li>Audio</li>
+        <li>Photograph</li>
+        </ul>
+    source_link: Source Link
+    source_text: Source Display
+    _singular: Link
+    _plural: Links
+    _frontend:
+      action:
+        add: Add Link
+
+  conference:
+    conf_type: Type of Conference
+    title: Title
+    date_s: Start Date
+    date_e: End Date
+    location: Location
+    city: City
+    state: State
+    zipcode: Zip
+    country: Country
+    contact: Contact Person
+    email: Email
+    phone: Phone
+    web_link: Web Link
+    display_link: Link Display Title
+    _singular: Conference
+    _plural: Conferences
+    _frontend:
+      action:
+        save: Save Conference
+        create: Create
+      section:
+        basic_information: Basic Information
+      messages:
+        created: Conference Created
+        updated: Conference Updated
+        deleted: Conference Deleted.
+
+  conference_event:
+    event_type: Type of Event
+    date_s: Start Date
+    time_s: Start Time
+    date_e: End Date
+    time_e: End Time
+    title: Title
+    session_num: Session Number
+    video1: Video 1
+    video2: Video 2
+    video3: Video 3
+    video4: Video 4
+    moderator: Moderator
+    alt_title: Alt. Mod Title
+    association: Association
+    room: Room
+    general_note: Notes
+    _singular: Conference Event
+    _plural: Conference Events
+    _frontend:
+      action:
+        add: Add Conference Event
+
+  conference_panel:
+    primary_name: Primary Part of Name
+    primary_name_tooltip: |
+        <p>The primary part of a name form (e.g. a last name or surname of a person).</p>
+        <p>Examples:</p>
+        <ul>
+        <li>Churchill <em>(for Churchill, Winston, Sir, 1874-1965 [person])</em></i>
+        <li>Black Foot <em>(for Black Foot, Chief, d. 1877 [person])</em></li>
+        <li>International Business Machines <em>(for International Business Machines. Microelectronics Division [corporate entity])</em></li>
+        </ul>
+    prefix: Prefix
+    prefix_tooltip: |
+        <p>Any term associated with a name that in normative use would precede the entire name.</p>
+        <p>Examples:</p>
+        <ul>
+        <li>Mrs.</li>
+        </ul>
+    title: Title
+    title_tooltip: |
+        <p>A title that is part of the name.</p>
+        <p>Examples:</p>
+        <ul>
+        <li>Sir <em>(for Churchill, Winston, Sir, 1874-1965)</em></li>
+        <li>Chief (for Black Foot, Chief, d. 1877)</li>
+        <li>Emperor of the East <em>(for John II Comnenus. Emperor of the East.)</em></li>
+        </ul>
+    rest_of_name: Rest of Name
+    rest_of_name_tooltip: |
+        <p>The first name element or forename and additional names, e.g, middle names, for the person named in the record.</p>
+        <p>Examples:</p>
+        <ul>
+        <li>Winston <em>(for Churchill, Winston, Sir, 1874-1965)</em></li>
+        <li>Humphrey <em>(for Ward, Humphrey, Mrs., 1851-1920)</em></li>
+        </ul>
+    suffix: Suffix
+    suffix_tooltip: |
+        <p>A term following a name that qualifies the name but is not a title.</p>
+        <p>Examples</p>
+        <ul>
+        <li>Jr.</li>
+        <li>fils</li>
+        </ul>
+    fuller_form: Fuller Form
+    fuller_form_tooltip: |
+        <p>The fuller form of first and middle names, when abbreviated.</p>
+        <p>Examples</p>
+        <ul>
+        <li>Hilda Doolittle <em>(for H.D., Hilda Doolittle, 1886-1961)</em></li>
+        </ul>
+    number: Number
+    number_tooltip: |
+        <p>A number, sometimes with a term, that qualifies the name. For personal names, often a roman numeral or a roman numeral and a subsequent part of a forename. For corporate names, the number of a part / section or meeting.</p>
+        <p>Examples:</p>
+        <ul>
+        <li>II Comnenus <em>(for John II Comnenus, Emperor of the East</em>/li>
+        <li>II <em>(for John Paul II)</em></li>
+        <li>97th, 2nd session <em>(for United States Congress, 97th, 2nd session)</em></li>
+        </ul>
+    association: Association
+    paper_title: Paper Title
+    presented: Presented?
+    file1: File 1
+    file1_display: File 1 Display Title
+    file2: File 2
+    file2_display: File 2 Display Title
+    file3: File 3
+    file3_display: File 3 Display Title
+    file4: File 4
+    file4_display: File 4 Display Title
+    general_note: Notes
+    _singular: Conference Panel
+    _plural: Conference Panels
+    _frontend:
+      action:
+        add: Add Conference Panel
+
+  vva_event:
+    active: Active?
+    publish: Publish?
+    name: Participant Name
+    department: Department
+    date_s: Start Date
+    time_s: Start Time
+    date_e: End Date
+    time_e: End Time
+    title: Title
+    web_link: Web Link
+    contact: Contact Person
+    email: Email
+    phone: Phone
+    location: Location
+    city: City
+    state: State
+    zipcode: Zip
+    country: Country
+    general_note: Notes
+    _singular: Event
+    _plural: Events
+    _frontend:
+      action:
+        save: Save Event
+        create: Create
+      section:
+        basic_information: Basic Information
+      messages:
+        created: Event Created
+        updated: Event Updated
+        deleted: Event Deleted.
+
+  reunion:
+    active: Active?
+    name: Participant Name
+    department: Department
+    date_s: Start Date
+    time_s: Start Time
+    date_e: End Date
+    time_e: End Time
+    title: Title
+    web_link: Web Link
+    contact: Contact Person
+    email: Email
+    phone: Phone
+    location: Location
+    city: City
+    state: State
+    zipcode: Zip
+    country: Country
+    general_note: Notes
+    post_note: Post Reunion Notes
+    _singular: Reunion
+    _plural: Reunions
+    _frontend:
+      action:
+        save: Save Reunion
+        create: Create
+      section:
+        basic_information: Basic Information
+      messages:
+        created: Reunion Created
+        updated: Reunion Updated
+        deleted: Reunion Deleted.

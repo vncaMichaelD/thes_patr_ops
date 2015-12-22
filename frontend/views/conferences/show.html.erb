@@ -1,0 +1,49 @@
+<%= setup_context(:object => @conference, :title => @conference.display_string) %>
+
+<div class="row">
+   <div class="col-md-3">
+      <%= render_aspace_partial :partial => "sidebar" %>
+   </div>
+   <div class="col-md-9">
+    <%= render_aspace_partial :partial => "conferences/toolbar" %>
+    <div class="record-pane">
+      <%= readonly_context :conference, @conference do |readonly| %>
+          <h2><%= @conference.display_string %> <span class="label label-info label-default"><%= I18n.t("conference._singular") %></span></h2>
+  
+          <%= render_aspace_partial :partial => "shared/flash_messages" %>
+
+          <% define_template "conference", jsonmodel_definition(:conference) do |form| %>
+          <section id="basic_information">
+            <h3><%= I18n.t "conference._frontend.section.basic_information" %></h3>
+
+			  <%= readonly.label_and_select "conf_type", form.possible_options_for("conf_type", true) %>
+			  <%= readonly.label_and_textfield "title" %>
+			  <%= readonly.label_and_textfield "date_s", :col_size => 3 %>
+			  <%= readonly.label_and_textfield "date_e", :col_size => 3 %>
+			  <%= readonly.label_and_textfield "location" %>
+			  <%= readonly.label_and_textfield "city", :col_size => 5 %>
+			  <%= readonly.label_and_textfield "state", :col_size => 3 %>
+			  <%= readonly.label_and_textfield "zipcode", :col_size => 2 %>
+			  <%= readonly.label_and_textfield "country", :col_size => 4 %>
+			  <%= readonly.label_and_textfield "contact", :col_size => 5 %>
+			  <%= readonly.label_and_textfield "email" %>
+			  <%= readonly.label_and_textfield "phone", :col_size => 3 %>
+			  <%= readonly.label_and_textfield "web_link" %>
+			  <%= readonly.label_and_textfield "display_link" %>
+
+            <%= display_audit_info(@conference) %>
+          </section>
+          <% end %>
+
+          <% readonly.emit_template("conference") %>
+
+          <% if @conference.conference_events.length > 0 %>
+            <%= render_aspace_partial :partial => "conference_events/show", :locals => { :conference_events => @conference.conference_events, :section_id => "conference_conference_events_", :context => readonly } %>
+          <% end %>
+
+         <%= show_plugins_for(@conference, readonly) %>
+
+       <% end %>
+     </div>
+   </div>
+</div>

@@ -1,0 +1,58 @@
+<%= setup_context(:object => @operation, :title => @operation.display_string) %>
+
+<div class="row">
+   <div class="col-md-3">
+      <%= render_aspace_partial :partial => "sidebar" %>
+   </div>
+   <div class="col-md-9">
+    <%= render_aspace_partial :partial => "operations/toolbar" %>
+    <div class="record-pane">
+      <%= readonly_context :operation, @operation do |readonly| %>
+          <h2><%= @operation.display_string %> <span class="label label-info label-default"><%= I18n.t("operation._singular") %></span></h2>
+  
+          <%= render_aspace_partial :partial => "shared/flash_messages" %>
+
+          <% define_template "operation", jsonmodel_definition(:operation) do |form| %>
+          <section id="basic_information">
+            <h3><%= I18n.t "operation._frontend.section.basic_information" %></h3>
+
+			<%= readonly.label_and_textfield "title" %>
+			<%= readonly.label_and_textfield "title_viet" %>
+			<%= readonly.label_and_textarea "objective" %>
+			<%= readonly.label_and_textarea "description" %>
+			<%= readonly.label_and_date "date_s" %>
+			<%= readonly.label_and_date "date_e" %>
+			<%= readonly.label_and_textarea "ctz" %>
+			<%= readonly.label_and_textarea "tao" %>
+			<%= readonly.label_and_textfield "aos_str" %>
+			<%= readonly.label_and_textfield "aos_kia" %>
+			<%= readonly.label_and_textfield "aos_mia" %>
+			<%= readonly.label_and_textfield "aos_wia" %>
+			<%= readonly.label_and_textfield "aos_pow" %>
+			<%= readonly.label_and_textfield "eos_str" %>
+			<%= readonly.label_and_textfield "eos_kia" %>
+			<%= readonly.label_and_textfield "eos_mia" %>
+			<%= readonly.label_and_textfield "eos_wia" %>
+			<%= readonly.label_and_textfield "eos_pow" %>
+			
+            <%= display_audit_info(@operation) %>
+          </section>
+          <% end %>
+
+          <% readonly.emit_template("operation") %>
+		<% if @operation.ops_aunits.length > 0 %>
+            <%= render_aspace_partial :partial => "ops_aunits/show", :locals => { :ops_aunits => @operation.ops_aunits, :section_id => "operation_ops_aunits_" } %>
+		<% end %>
+          <% if @operation.ops_eunits.length > 0 %>
+            <%= render_aspace_partial :partial => "ops_eunits/show", :locals => { :ops_eunits => @operation.ops_eunits, :section_id => "operation_ops_eunits_"} %>
+          <% end %>
+          <% if @operation.ops_sources.length > 0 %>
+            <%= render_aspace_partial :partial => "ops_sources/show", :locals => { :ops_sources => @operation.ops_sources, :section_id => "operation_ops_sources_"} %>
+          <% end %>
+
+         <%= show_plugins_for(@operation, readonly) %>
+
+       <% end %>
+     </div>
+   </div>
+</div>

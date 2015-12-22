@@ -1,0 +1,20 @@
+<%= setup_context(:object => @vva_event, :title => I18n.t("actions.defaults")) %>
+
+<%= form_for @vva_event, :as => "vva_event", :url => {:action => :update_defaults}, :html => {:class => 'form-horizontal aspace-record-form', :id => "vva_event_form"} do |f| %>
+
+  <%= form_context :vva_event, @vva_event do |form| %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= render_aspace_partial :partial => "sidebar" %>
+      </div>
+      <div class="col-md-9">
+        <%= render_aspace_partial :partial => "shared/toolbar_new_records" %>
+        <div class="record-pane">
+          <%= link_to_help :topic => "vva_event" %>
+          <h2><%= I18n.t("vva_event._singular") %> <%= I18n.t("actions.defaults") %> <span class="label label-info"><%= I18n.t("vva_event._singular") %></span></h2>
+          <%= render_aspace_partial :partial => "vva_events/form", :locals => {:form => form} %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,10 @@
+<%= render(:layout => '/shared/sidebar',
+           :locals => {
+             :record_type => 'operation',
+             :record => @operation
+           }) do |sidebar| %>
+
+		<%= sidebar.render_for_view_and_edit(:subrecord_type => 'ops_aunit', :property => 'ops_aunits') %>
+		<%= sidebar.render_for_view_and_edit(:subrecord_type => 'ops_eunit', :property => 'ops_eunits') %>
+	    <%= sidebar.render_for_view_and_edit(:subrecord_type => 'ops_source', :property => 'ops_sources') %>
+<% end %>

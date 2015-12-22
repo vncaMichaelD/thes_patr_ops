@@ -1,0 +1,39 @@
+<%= render_aspace_partial :partial => "shared/form_messages", :locals => {:object => @ttusea, :form => form} %>
+
+<% define_template("ttusea", jsonmodel_definition(:ttusea)) do |form| %>
+  <section id="basic_information">
+    <h3>
+      <%= I18n.t "ttusea._frontend.section.basic_information" %>
+      <%= link_to_help :topic => "ttusea_basic_information" %>
+    </h3>
+    <fieldset>
+		<%= form.label_and_textfield "primary_name" %>
+		<%= form.label_and_textfield "title" %>
+		<%= form.label_and_textfield "prefix", :col_size => 4 %>
+		<%= form.label_and_textfield "rest_of_name" %>
+		<%= form.label_and_textfield "suffix", :col_size => 4 %>
+		<%= form.label_and_textfield "fuller_form" %>
+		<%= form.label_and_textfield "number", :col_size => 3 %>
+		<%= form.label_and_date "dobirth" %>
+		<%= form.label_and_date "dodeath" %>
+		<%= form.label_and_textfield "dograd", :col_size => 2 %>
+		<%= form.label_and_textarea "text_block" %>
+		<%= form.label_and_textfield "profile_img" %>
+		<%= form.label_and_textarea "general_note" %>
+		<%= form.label_and_textarea "path" %>
+    </fieldset>
+  </section>
+<% end %>
+
+<% form.emit_template("ttusea") %>
+
+<%= render_aspace_partial :partial => "shared/subrecord_form", :locals => {:form => form, :name => "linked_agents", :template => "digital_object_linked_agent"} %>
+<%= render_aspace_partial :partial => "shared/subrecord_form", :locals => {:form => form, :name => "ttusea_ttus"} %>
+<%= render_aspace_partial :partial => "shared/subrecord_form", :locals => {:form => form, :name => "ttusea_imgs"} %>
+<%= render_aspace_partial :partial => "shared/subrecord_form", :locals => {:form => form, :name => "ttusea_links"} %>
+
+
+<div class="form-actions">            
+  <button type="submit" class="btn btn-primary"><%= I18n.t("ttusea._frontend.action.save") %></button>
+  <%= link_to I18n.t("actions.cancel"), :back, :class => "btn btn-cancel btn-default" %>
+</div>

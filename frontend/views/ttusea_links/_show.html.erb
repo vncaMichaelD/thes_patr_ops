@@ -1,0 +1,23 @@
+<%
+   section_id = "ttusea_links" if section_id.blank?
+%>
+
+<section id="<%= section_id %>">
+  <h3><%= I18n.t("ttusea_link._plural") %></h3>
+  <div class="accordion details" id="<%= section_id %>_accordion">
+    <% ttusea_links.each_with_index do | ttusea_link, index | %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row accordion-toggle collapsed" data-toggle="collapse" data-parent="#<%= section_id %>_accordion" href="#<%= section_id %>_ttusea_link_<%= index %>">
+            <div class="col-md-7">
+              <%= ttusea_link['link_text'] %>
+            </div>
+          </div>
+        </div>
+        <div id="<%= section_id %>_ttusea_link_<%= index %>" class="accordion-body collapse">
+          <%= read_only_view(ttusea_link) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

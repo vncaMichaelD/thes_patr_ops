@@ -1,0 +1,50 @@
+<%= setup_context(:object => @reunion, :title => @reunion.display_string) %>
+
+<div class="row">
+   <div class="col-md-3">
+      <%= render_aspace_partial :partial => "sidebar" %>
+   </div>
+   <div class="col-md-9">
+    <%= render_aspace_partial :partial => "reunions/toolbar" %>
+    <div class="record-pane">
+      <%= readonly_context :reunion, @reunion do |readonly| %>
+          <h2><%= @reunion.display_string %> <span class="label label-info label-default"><%= I18n.t("reunion._singular") %></span></h2>
+  
+          <%= render_aspace_partial :partial => "shared/flash_messages" %>
+
+          <% define_template "reunion", jsonmodel_definition(:reunion) do |form| %>
+          <section id="basic_information">
+            <h3><%= I18n.t "reunion._frontend.section.basic_information" %></h3>
+
+			  <%= readonly.label_and_boolean "active", {}, user_prefs["active"] %>
+			  <%= readonly.label_and_textfield "name", :col_size => 5 %>
+			  <%= readonly.label_and_select "department", form.possible_options_for("department", true) %>
+			  <%= readonly.label_and_date "date_s", :col_size => 3 %>
+			  <%= readonly.label_and_textfield "time_s", :col_size => 2 %>
+			  <%= readonly.label_and_date "date_e", :col_size => 3 %>
+			  <%= readonly.label_and_textfield "time_e", :col_size => 2 %>
+			  <%= readonly.label_and_textfield "title" %>
+			  <%= readonly.label_and_textfield "web_link" %>
+			  <%= readonly.label_and_textfield "contact", :col_size => 5 %>
+			  <%= readonly.label_and_textfield "email" %>
+			  <%= readonly.label_and_textfield "phone", :col_size => 3 %>
+			  <%= readonly.label_and_textfield "location" %>
+			  <%= readonly.label_and_textfield "city", :col_size => 5 %>
+			  <%= readonly.label_and_textfield "state", :col_size => 3 %>
+			  <%= readonly.label_and_textfield "zipcode", :col_size => 2 %>
+			  <%= readonly.label_and_textfield "country", :col_size => 4 %>
+			  <%= readonly.label_and_textarea "general_note" %>
+			  <%= readonly.label_and_textarea "post_note" %>
+
+            <%= display_audit_info(@reunion) %>
+          </section>
+          <% end %>
+
+          <% readonly.emit_template("reunion") %>
+
+         <%= show_plugins_for(@reunion, readonly) %>
+
+       <% end %>
+     </div>
+   </div>
+</div>

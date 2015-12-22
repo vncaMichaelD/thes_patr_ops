@@ -1,0 +1,23 @@
+<%
+   section_id = "patron_purposes" if section_id.blank?
+%>
+
+<section id="<%= section_id %>">
+  <h3><%= I18n.t("patron_purpose._plural") %></h3>
+  <div class="accordion details" id="<%= section_id %>_accordion">
+    <% patron_purposes.each_with_index do | patron_purpose, index | %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row accordion-toggle collapsed" data-toggle="collapse" data-parent="#<%= section_id %>_accordion" href="#<%= section_id %>_patron_purpose_<%= index %>">
+            <div class="col-md-3">
+              <%= patron_purpose['date_signed'] %>
+            </div>
+          </div>
+        </div>
+        <div id="<%= section_id %>_patron_purpose_<%= index %>" class="accordion-body collapse">
+          <%= read_only_view(patron_purpose) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

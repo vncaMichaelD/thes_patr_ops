@@ -1,0 +1,36 @@
+<%= render_aspace_partial :partial => "shared/form_messages", :locals => {:object => @conference, :form => form} %>
+
+<% define_template("conference", jsonmodel_definition(:conference)) do |form| %>
+  <section id="basic_information">
+    <h3>
+      <%= I18n.t "conference._frontend.section.basic_information" %>
+      <%= link_to_help :topic => "conference_basic_information" %>
+    </h3>
+    <fieldset>
+	  <%= form.label_and_select "conf_type", form.possible_options_for("conf_type", true) %>
+      <%= form.label_and_textfield "title" %>
+	  <%= form.label_and_textfield "date_s", :col_size => 3 %>
+	  <%= form.label_and_textfield "date_e", :col_size => 3 %>
+	  <%= form.label_and_textfield "location" %>
+	  <%= form.label_and_textfield "city", :col_size => 5 %>
+	  <%= form.label_and_textfield "state", :col_size => 3 %>
+	  <%= form.label_and_textfield "zipcode", :col_size => 2 %>
+	  <%= form.label_and_textfield "country", :col_size => 4 %>
+	  <%= form.label_and_textfield "contact", :col_size => 5 %>
+	  <%= form.label_and_textfield "email" %>
+	  <%= form.label_and_textfield "phone", :col_size => 3 %>
+	  <%= form.label_and_textfield "web_link" %>
+	  <%= form.label_and_textfield "display_link" %>
+    </fieldset>
+  </section>
+<% end %>
+
+<% form.emit_template("conference") %>
+
+<%= render_aspace_partial :partial => "shared/subrecord_form", :locals => {:form => form, :name => "conference_events"} %>
+
+
+<div class="form-actions">            
+  <button type="submit" class="btn btn-primary"><%= I18n.t("conference._frontend.action.save") %></button>
+  <%= link_to I18n.t("actions.cancel"), :back, :class => "btn btn-cancel btn-default" %>
+</div>

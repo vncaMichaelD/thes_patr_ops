@@ -1,0 +1,55 @@
+<%= setup_context(:object => @ttusea, :title => @ttusea.display_string) %>
+
+<div class="row">
+   <div class="col-md-3">
+      <%= render_aspace_partial :partial => "sidebar" %>
+   </div>
+   <div class="col-md-9">
+    <%= render_aspace_partial :partial => "ttuseas/toolbar" %>
+    <div class="record-pane">
+      <%= readonly_context :ttusea, @ttusea do |readonly| %>
+          <h2><%= @ttusea.display_string %> <span class="label label-info label-default"><%= I18n.t("ttusea._singular") %></span></h2>
+  
+          <%= render_aspace_partial :partial => "shared/flash_messages" %>
+
+          <% define_template "ttusea", jsonmodel_definition(:ttusea) do |form| %>
+          <section id="basic_information">
+            <h3><%= I18n.t "ttusea._frontend.section.basic_information" %></h3>
+
+            <%= readonly.label_and_textfield "primary_name" %>
+			<%= readonly.label_and_textfield "title" %>
+			<%= readonly.label_and_textfield "prefix", :col_size => 4 %>
+			<%= readonly.label_and_textfield "rest_of_name" %>
+			<%= readonly.label_and_textfield "suffix", :col_size => 4 %>
+			<%= readonly.label_and_textfield "fuller_form" %>
+			<%= readonly.label_and_textfield "number", :col_size => 3 %>
+			<%= readonly.label_and_date "dobirth" %>
+			<%= readonly.label_and_date "dodeath" %>
+			<%= readonly.label_and_textfield "dograd", :col_size => 1 %>
+			<%= readonly.label_and_textarea "text_block" %>
+			<%= readonly.label_and_textfield "profile_img" %>
+			<%= readonly.label_and_textarea "general_note" %>
+			<%= readonly.label_and_textarea "path" %>
+
+            <%= display_audit_info(@ttusea) %>
+          </section>
+          <% end %>
+
+          <% readonly.emit_template("ttusea") %>
+
+		  <% if @ttusea.ttusea_ttus.length > 0 %>
+            <%= render_aspace_partial :partial => "ttusea_ttus/show", :locals => { :ttusea_ttus => ttusea["ttusea_ttus"], :section_id => "ttusea_ttusea_ttus_" } %>
+		  <% end %>
+          <% if @ttusea.ttusea_imgs.length > 0 %>
+            <%= render_aspace_partial :partial => "ttusea_imgs/show", :locals => { :ttusea_imgs => @ttusea.ttusea_imgs, :section_id => "ttusea_ttusea_imgs_"} %>
+          <% end %>
+          <% if @ttusea.ttusea_links.length > 0 %>
+            <%= render_aspace_partial :partial => "ttusea_links/show", :locals => { :ttusea_links => @ttusea.ttusea_links, :section_id => "ttusea_ttusea_links_"} %>
+          <% end %>
+
+         <%= show_plugins_for(@ttusea, readonly) %>
+
+       <% end %>
+     </div>
+   </div>
+</div>

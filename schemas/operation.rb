@@ -1,0 +1,36 @@
+{
+  :schema => {
+    "$schema" => "http://www.archivesspace.org/archivesspace.json",
+    "version" => 1,
+    "type" => "object",
+    "uri" => "/repositories/:repo_id/operations",
+    "properties" => {
+      "title" => {"type" => "string", "maxLength" => 255, "ifmissing" => "error"},
+      "title_viet" => {"type" => "string", "maxLength" => 255},
+      "objective" => {"type" => "string", "maxLength" => 8192},
+      "description" => {"type" => "string", "maxLength" => 8192},
+      "date_s" => {"type" => "string", "maxLength" => 255},
+      "date_e" => {"type" => "string", "maxLength" => 255},
+      "ctz" => {"type" => "string", "maxLength" => 8192},
+      "tao" => {"type" => "string", "maxLength" => 8192},
+      "aos_str" => {"type" => "string", "maxLength" => 255},
+      "aos_kia" => {"type" => "string", "maxLength" => 255},
+      "aos_mia" => {"type" => "string", "maxLength" => 255},
+	  "aos_wia" => {"type" => "string", "maxLength" => 255},
+      "aos_pow" => {"type" => "string", "maxLength" => 255},
+      "eos_str" => {"type" => "string", "maxLength" => 255},
+      "eos_kia" => {"type" => "string", "maxLength" => 255},
+      "eos_mia" => {"type" => "string", "maxLength" => 255},
+	  "eos_wia" => {"type" => "string", "maxLength" => 255},
+      "eos_pow" => {"type" => "string", "maxLength" => 255},
+	
+	  "ops_aunits" => {"type" => "array", "items" => {"type" => "JSONModel(:ops_aunit) object"}},
+	  "ops_eunits" => {"type" => "array", "items" => {"type" => "JSONModel(:ops_eunit) object"}},
+      "ops_sources" =>{"type" => "array", "items" => {"type" => "JSONModel(:ops_source) object"}},
+
+      "uri" => {"type" => "string", "required" => false},
+      "suppressed" => {"type" => "boolean", "default" => false},
+      "display_string" => {"type" => "string", "maxLength" => 8192, "readonly" => true},
+    },
+  },
+}

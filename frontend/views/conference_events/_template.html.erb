@@ -1,0 +1,23 @@
+<%= render_aspace_partial :partial => "conference_panels/template" %>
+
+<% define_template "conference_event", jsonmodel_definition(:conference_event) do |form| %>
+  <div class="subrecord-form-fields">
+      <%= form.label_and_select "event_type", form.possible_options_for("event_type", true) %>
+	  <%= form.label_and_date "date_s", :col_size => 3 %>
+	  <%= form.label_and_textfield "time_s", :col_size => 2 %>
+	  <%= form.label_and_date "date_e", :col_size => 3 %>
+	  <%= form.label_and_textfield "time_e", :col_size => 2 %>
+	  <%= form.label_and_textfield "title" %>
+	  <%= form.label_and_textfield "session_num", :col_size => 2 %>
+	  <%= form.label_and_textfield "video1" %>
+	  <%= form.label_and_textfield "video2" %>
+	  <%= form.label_and_textfield "video3" %>
+	  <%= form.label_and_textfield "video4" %>
+	  <%= form.label_and_textfield "moderator", :col_size => 4 %>
+	  <%= form.label_and_textfield "alt_title", :col_size => 3 %>
+	  <%= form.label_and_textfield "association", :col_size => 4 %>
+	  <%= form.label_and_textfield "room", :col_size => 3 %>
+	  <%= form.label_and_textarea "general_note" %>
+	  <%= render_aspace_partial :partial => "shared/subrecord_form", :locals => {:form => form, :name => "conference_panels", :heading_size => "h5"} %>
+  </div>
+<% end %>

@@ -1,0 +1,8 @@
+<% define_template "ops_eunit", jsonmodel_definition(:ops_eunit) do |form| %>
+  <div class="subrecord-form-fields">
+			<%= form.label_and_textfield "unit" %>
+			<%= form.label_and_textfield "branch" %>
+			<%= form.label_and_textfield "branch_abbr", :col_size => 3 %>
+
+  </div>
+<% end %>

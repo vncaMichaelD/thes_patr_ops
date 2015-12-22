@@ -1,0 +1,9 @@
+<% define_template "ttusea_link", jsonmodel_definition(:ttusea_link) do |form| %>
+  <div class="subrecord-form-fields">
+			<%= form.label_and_textfield "link_link" %>
+			<%= form.label_and_textfield "link_text", :col_size => 4  %>
+			<%= form.label_and_textfield "type", :col_size => 3  %>
+			<%= form.label_and_textfield "source_link" %>
+			<%= form.label_and_textfield "source_text", :col_size => 4  %>
+  </div>
+<% end %>

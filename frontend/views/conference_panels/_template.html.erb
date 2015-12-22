@@ -1,0 +1,23 @@
+<% define_template "conference_panel", jsonmodel_definition(:conference_panel) do |form| %>
+  <div class="subrecord-form-fields">
+	  <%= form.label_and_textfield "primary_name" %>
+	  <%= form.label_and_textfield "title" %>
+	  <%= form.label_and_textfield "prefix", :col_size => 4  %>
+	  <%= form.label_and_textfield "rest_of_name" %>
+	  <%= form.label_and_textfield "suffix", :col_size => 4  %>
+	  <%= form.label_and_textfield "fuller_form" %>
+	  <%= form.label_and_textfield "number", :col_size => 3  %>
+	  <%= form.label_and_textfield "association", :col_size => 5 %>
+	  <%= form.label_and_textfield "paper_title" %>
+	  <%= form.label_and_boolean "presented", {}, user_prefs["presented"] %>
+	  <%= form.label_and_textfield "file1" %>
+	  <%= form.label_and_textfield "file1_display", :col_size => 4 %>
+	  <%= form.label_and_textfield "file2" %>
+	  <%= form.label_and_textfield "file2_display", :col_size => 4 %>
+	  <%= form.label_and_textfield "file3" %>
+	  <%= form.label_and_textfield "file3_display", :col_size => 4 %>
+	  <%= form.label_and_textfield "file4" %>
+	  <%= form.label_and_textfield "file4_display", :col_size => 4 %>
+	  <%= form.label_and_textarea "general_note" %>
+  </div>
+<% end %>

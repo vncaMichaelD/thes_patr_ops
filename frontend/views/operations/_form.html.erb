@@ -1,0 +1,40 @@
+<%= render_aspace_partial :partial => "shared/form_messages", :locals => {:object => @operation, :form => form} %>
+
+<% define_template("operation", jsonmodel_definition(:operation)) do |form| %>
+  <section id="basic_information">
+    <h3>
+      <%= I18n.t "operation._frontend.section.basic_information" %>
+      <%= link_to_help :topic => "operation_basic_information" %>
+    </h3>
+    <fieldset>
+		<%= form.label_and_textfield "title" %>
+		<%= form.label_and_textfield "title_viet" %>
+		<%= form.label_and_textarea "objective" %>
+		<%= form.label_and_textarea "description" %>
+		<%= form.label_and_date "date_s" %>
+		<%= form.label_and_date "date_e" %>
+		<%= form.label_and_textarea "ctz" %>
+		<%= form.label_and_textarea "tao" %>
+		<%= form.label_and_textfield "aos_str", :col_size => 4  %>
+		<%= form.label_and_textfield "aos_kia", :col_size => 4  %>
+		<%= form.label_and_textfield "aos_mia", :col_size => 4  %>
+		<%= form.label_and_textfield "aos_wia", :col_size => 4  %>
+		<%= form.label_and_textfield "aos_pow", :col_size => 4  %>
+		<%= form.label_and_textfield "eos_str", :col_size => 4  %>
+		<%= form.label_and_textfield "eos_kia", :col_size => 4  %>
+		<%= form.label_and_textfield "eos_mia", :col_size => 4  %>
+		<%= form.label_and_textfield "eos_wia", :col_size => 4  %>
+		<%= form.label_and_textfield "eos_pow", :col_size => 4  %>
+    </fieldset>
+  </section>
+<% end %>
+
+<% form.emit_template("operation") %>
+<%= render_aspace_partial :partial => "shared/subrecord_form", :locals => {:form => form, :name => "ops_aunits"} %>
+<%= render_aspace_partial :partial => "shared/subrecord_form", :locals => {:form => form, :name => "ops_eunits"} %>
+<%= render_aspace_partial :partial => "shared/subrecord_form", :locals => {:form => form, :name => "ops_sources"} %>
+
+<div class="form-actions">            
+  <button type="submit" class="btn btn-primary"><%= I18n.t("operation._frontend.action.save") %></button>
+  <%= link_to I18n.t("actions.cancel"), :back, :class => "btn btn-cancel btn-default" %>
+</div>

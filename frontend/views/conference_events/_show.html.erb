@@ -1,0 +1,25 @@
+<%
+   section_id = "conference_events" if section_id.blank?
+%>
+
+<section id="<%= section_id %>">
+  <h3><%= I18n.t("conference_event._plural") %></h3>
+  <div class="accordion details" id="<%= section_id %>_accordion">
+    <% conference_events.each_with_index do | conference_event, index | %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row accordion-toggle collapsed" data-toggle="collapse" data-parent="#<%= section_id %>_accordion" href="#<%= section_id %>_conference_event_<%= index %>">
+            <div class="col-md-7">
+              <%= conference_event['title'] %>
+            </div>
+          </div>
+        </div>
+        <div id="<%= section_id %>_inventory_fldr_<%= index %>" class="accordion-body collapse">
+			<% if conference["conference_panels"].length > 0 %>
+				<%= render_aspace_partial :partial => "conference_panels/show", :locals => { :conference_panels => conference["conference_panels"], :section_id => "conference#{index}_conference_panels_" } %>
+			<% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

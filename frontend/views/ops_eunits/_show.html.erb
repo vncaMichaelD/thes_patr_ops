@@ -1,0 +1,23 @@
+<%
+   section_id = "ops_eunits" if section_id.blank?
+%>
+
+<section id="<%= section_id %>">
+  <h3><%= I18n.t("ops_eunit._plural") %></h3>
+  <div class="accordion details" id="<%= section_id %>_accordion">
+    <% ops_eunits.each_with_index do | ops_eunit, index | %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row accordion-toggle collapsed" data-toggle="collapse" data-parent="#<%= section_id %>_accordion" href="#<%= section_id %>_ops_eunit_<%= index %>">
+            <div class="col-md-7">
+              <%= ops_eunit['unit'] %>
+            </div>
+          </div>
+        </div>
+        <div id="<%= section_id %>_ops_eunit_<%= index %>" class="accordion-body collapse">
+          <%= read_only_view(ops_eunit) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

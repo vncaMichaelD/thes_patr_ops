@@ -1,0 +1,29 @@
+<%
+   section_id = "ttusea_ttus" if section_id.blank?
+%>
+
+<section id="<%= section_id %>">
+  <h3><%= I18n.t("ttusea_ttu._plural") %></h3>
+  <div class="accordion details" id="<%= section_id %>_accordion">
+    <% ttusea_ttus.each_with_index do | ttusea_ttu, index | %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row accordion-toggle collapsed" data-toggle="collapse" data-parent="#<%= section_id %>_accordion" href="#<%= section_id %>_ttusea_ttu_<%= index %>">
+            <div class="col-md-3">
+              <%= ttusea_ttu['date_s'] %>
+            </div>
+			<div class="col-md-1">
+              &nbsp;-&nbsp;
+            </div>
+			<div class="col-md-3">
+              <%= ttusea_ttu['date_e'] %>
+            </div>
+          </div>
+        </div>
+        <div id="<%= section_id %>_ttusea_ttu_<%= index %>" class="accordion-body collapse">
+          <%= read_only_view(ttusea_ttu) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

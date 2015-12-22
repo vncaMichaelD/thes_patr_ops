@@ -1,0 +1,23 @@
+<%
+   section_id = "conference_panels" if section_id.blank?
+%>
+
+<section id="<%= section_id %>">
+  <h3><%= I18n.t("conference_panel._plural") %></h3>
+  <div class="accordion details" id="<%= section_id %>_accordion">
+    <% conference_panels.each_with_index do | conference_panel, index | %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row accordion-toggle collapsed" data-toggle="collapse" data-parent="#<%= section_id %>_accordion" href="#<%= section_id %>_conference_panel_<%= index %>">
+            <div class="col-md-3">
+              <%= conference_panel['rest_of_name'] %>
+            </div>
+            <div class="col-md-3">
+              <%= conference_panel['primary_name'] %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

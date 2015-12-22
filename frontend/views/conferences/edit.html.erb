@@ -1,0 +1,21 @@
+<%= setup_context(:object => @conference, :title => @conference.display_string) %>
+
+<%= form_for @conference, :as => "conference", :url => {:action => :update}, :html => {:class => 'form-horizontal aspace-record-form', :id => "conference_form"}.merge(update_monitor_params(@conference)) do |f| %>
+  <%= form_context :conference, @conference do |form| %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= render_aspace_partial :partial => "sidebar" %>
+      </div>
+
+      <div class="col-md-9">
+        <%= render_aspace_partial :partial => "conferences/toolbar" %>
+        <div class="record-pane">
+          <%= link_to_help :topic => "conference" %>
+          <h2><span class="label label-info"><%= I18n.t("conference._singular") %></span></h2>
+          <input type="hidden" name="_method" value="put" />
+          <%= render_aspace_partial :partial => "conferences/form", :locals => {:form => form} %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,21 @@
+<%= setup_context(:object => @ttusea, :title => @ttusea.display_string) %>
+
+<%= form_for @ttusea, :as => "ttusea", :url => {:action => :update}, :html => {:class => 'form-horizontal aspace-record-form', :id => "ttusea_form"}.merge(update_monitor_params(@ttusea)) do |f| %>
+  <%= form_context :ttusea, @ttusea do |form| %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= render_aspace_partial :partial => "sidebar" %>
+      </div>
+
+      <div class="col-md-9">
+        <%= render_aspace_partial :partial => "ttuseas/toolbar" %>
+        <div class="record-pane">
+          <%= link_to_help :topic => "ttusea" %>
+          <h2><span class="label label-info"><%= I18n.t("ttusea._singular") %></span></h2>
+          <input type="hidden" name="_method" value="put" />
+          <%= render_aspace_partial :partial => "ttuseas/form", :locals => {:form => form} %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,11 @@
+<% define_template "patron_purpose", jsonmodel_definition(:patron_purpose) do |form| %>
+  <div class="subrecord-form-fields">
+            <%= form.label_and_select "status", form.possible_options_for("status", true) %>
+			<%= form.label_and_textarea "status_note" %>
+			<%= form.label_and_select "purpose", form.possible_options_for("purpose", true) %>
+			<%= form.label_and_textarea "purpose_note" %>
+			<%= form.label_and_textarea "research_topic" %>
+			<%= form.label_and_date "date_signed" %>
+
+  </div>
+<% end %>
